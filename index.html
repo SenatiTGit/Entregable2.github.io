@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <title>Consulta de DNI</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="centered">
+            <p><span id="hora-actual"></span></p>
+            <h1>CONSULTA DNI</h1>
+            <div class="card">
+                <h2>Ingrese su número de DNI</h2>
+                <form id="dni-form" onsubmit="return false;">
+                    <input type="text" id="dni" name="dni" placeholder="Ejemplo: 12345678" required pattern="\d{8}"
+                        maxlength="8" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    <button type="button" id="prueba">CONSULTAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="close">&times;</span>
+            <h2>Resultado de la consulta</h2>
+            <p><strong>Nombre:</strong> <span id="popup-nombre"></span></p>
+            <p><strong>Tipo de Documento:</strong> <span id="popup-tipoDocumento"></span></p>
+            <p><strong>Número de Documento:</strong> <span id="popup-numeroDocumento"></span></p>
+            <button id="realizar-otra-consulta">Realizar otra consulta</button>
+        </div>
+    </div>
+
+    <div class="clima-info">
+        <h2>Clima Actual</h2>
+        <p id="clima-icono" class="wi"></p>
+        <p>Temperatura: <span id="clima-temperatura"></span></p>
+        <p>Descripción del Clima: <span id="clima-descripcion"></span></p>
+        <p>Latitud: <span id="clima-latitud"></span></p>
+        <p>Longitud: <span id="clima-longitud"></span></p>
+        <p>Zona Horaria: <span id="clima-timezone"></span></p>
+        <p>Código del País: <span id="clima-country-code"></span></p>
+        <p>Nombre de la Ciudad: <span id="clima-city-name"></span></p>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/consulta_dni.js"></script>
+    <script src="js/clima.js"></script>
+    <script src="js/hora.js"></script>
+
+</body>
+
+</html>
